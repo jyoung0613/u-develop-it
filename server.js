@@ -22,6 +22,10 @@ const db = mysql.createConnection(
   );
 
 
+db.query(`SELECT * FROM candidates`, (err, rows) => {
+    console.log(rows);
+});
+
   // Default response for any other request (Not Found) this must be at the bottom or it will override everything below it
 app.use((req, res) => {
     res.status(404).end();
